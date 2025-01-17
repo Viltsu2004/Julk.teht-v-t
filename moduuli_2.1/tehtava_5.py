@@ -11,8 +11,8 @@ luo1 = float(luo)
 #kokonaismassa
 mas = (leiv1*20*32*13.3+nau1*32*13.3+luo1*13.3)
 
-#kokomassa kiloihin ja pyöristys kokonaislukuun
-kilo = f'{mas/1000:.0f}'
+#kokomassa kiloihin
+kilo = int(mas/1000)
 
 #kiloissa oleva kokonaisluku kerrotaan tuhannella = massan pyör. tuhansiin
 kokgra = float(kilo)*1000
