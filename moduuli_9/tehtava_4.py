@@ -13,4 +13,4 @@ class Auto:
         self.nopeus = nopeus
         self.matka = matka
 
-main()jea
+main()jeajaje
