@@ -6,30 +6,18 @@ class Auto:
         self.kuljettumatka = kuljettumatka
 
     def kiihdyta(self, muutos):
-        self.nopeus += muutos
-        if self.nopeus < 0:
-            self.nopeus = 0
-        elif self.nopeus > self.huippunopeus:
-            self.nopeus = self.huippunopeus
-        return
-
-
-
+        for i in muutos:
+            self.nopeus += i
+            if self.nopeus < 0:
+                self.nopeus = 0
+            elif self.nopeus > self.huippunopeus:
+                self.nopeus = self.huippunopeus
+            print(f"\nAuton rekisteritunnus on {mersu.rekisteritunnus:s}, sen huippunopeus on {mersu.huippunopeus} km/h, \ntämän hetkinen nopeus {mersu.nopeus:d} km/h ja kuljettu matka {mersu.kuljettumatka:d} km")
 
 
 mersu = Auto("ABC-123", 142)
 
-mersu.kiihdyta(30)
-mersu.kiihdyta(70)
-mersu.kiihdyta(50)
+Auto.kiihdyta(mersu, (30, 70, 50, -200))
 
 
 
-print(f"\nAuton rekisteritunnus on {mersu.rekisteritunnus:s}, sen huippunopeus on {mersu.huippunopeus} km/h, \ntämän hetkinen nopeus {mersu.nopeus:d} km/h ja kuljettu matka {mersu.kuljettumatka:d} km")
-
-mersu.kiihdyta(-200)
-
-
-print(f"\nAuton rekisteritunnus on {mersu.rekisteritunnus:s}, sen huippunopeus on {mersu.huippunopeus} km/h, \ntämän hetkinen nopeus {mersu.nopeus:d} km/h ja kuljettu matka {mersu.kuljettumatka:d} km")
-
-#30,70, 50, nopeus, -200 uus.nop
