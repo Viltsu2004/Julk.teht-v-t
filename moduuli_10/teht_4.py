@@ -32,15 +32,16 @@ class Kilpailu:
             uusi_auto = Auto(f'ABC-{i + 1}', random.randint(100, 200), 0, 0)
             self.osallistuvat_autot.append(uusi_auto)
 
+    tunti_mennyt = 0
     def tunti_kuluu(self):
-        tunti = 0
         while self.kilpailuohi() != True:
             for l in self.osallistuvat_autot:
                 l.kiihdyta(random.randint(-10, 15))
                 l.kulje(1)
-                tunti += 1
-                if tunti % 10 == 0:
-                    print(self.tulostatilanne())
+                self.tunti_mennyt += 1
+                if self.tunti_mennyt % 10 == 0:
+                    print(f'\nAikaa on kulunut {self.tunti_mennyt} h.')
+                    self.tulostatilanne()
 
 
 
@@ -56,14 +57,13 @@ class Kilpailu:
     def kilpailuohi(self):
         for auto in self.osallistuvat_autot:
             if auto.kuljettumatka >= self.kilpailun_pituus:
-                print(self.tulostatilanne())
                 return True
-            else:
-                return False
 
 
 
 
 
 aloitus = Kilpailu("Suuri romuralli", 8000, 10)
+print(f'\nKilpailun nimi on "{aloitus.kilpailun_nimi}", ja kisan pituus on {aloitus.kilpailun_pituus} km')
+
 aloitus.tunti_kuluu()
