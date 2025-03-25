@@ -1,0 +1,48 @@
+.container {
+    width: 80%;
+    margin: 0;
+}
+
+html {
+    font-family: Verdana;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    background-color: cadetblue;
+    padding: 1rem;
+    margin: 0;
+}
+
+nav {
+    background-color: burlywood;
+    margin: 0;
+}
+
+
+main {
+    background-color: #895f5f;
+    padding: 1rem;
+    display: flex;
+}
+
+section {
+    background-color: indianred;
+    margin: 0;
+}
+
+article {
+    background-color: gold;
+    margin: 0;
+}
+
+aside {
+    background-color: gainsboro;
+}
+footer {
+    background-color: teal;
+}
+
