@@ -20,6 +20,7 @@ header {
 nav {
     background-color: burlywood;
     margin: 0;
+    display: flex;
 }
 
 
