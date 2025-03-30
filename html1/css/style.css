@@ -19,20 +19,13 @@ header {
     background-image: url(backround.jpg);
     height: 100px;
     text-align: center;
+    flex-direction: row;
+
+
 }
-
-header h1 {
-    display: flex;
-    margin-top: 0;
-    margin-right: 40rem;
-}
-
-
 nav {
-    margin-top: 0;
-    margin-left: 3rem;
     display: flex;
-    text-align: center;
+    margin-right: 3rem;
 }
 
 ul {
@@ -40,30 +33,31 @@ ul {
     list-style-type: none;
     justify-content: space-evenly;
     text-align: center;
-    margin-top: 0;
-    margin-left: -3rem;
-}
-
-li {
-    margin-right: 3rem;
-
+    margin-left: 20rem;
+    padding: 0;
+    width: 90%;
 }
 
 li a {
+    display: block;
     color: #00003e;
-    width: 2rem;
-    height: 1rem;
-    display: flex;
+    padding: 8px;
+    border: none;
+    font-weight: 500;
+    font-size: 1.5rem;
+    position: relative;
     text-align: center;
-    line-height: 100px;
     text-decoration: none;
     margin-right: 5rem;
-
 }
+
+
 
 li a:hover {
     color: rebeccapurple;
 }
+
+
 
 main {
     display: flex;
@@ -87,3 +81,4 @@ article p {
     margin-left: 3rem;
     margin-right: 3rem;
 }
+
