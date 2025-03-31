@@ -8,6 +8,7 @@
     width: 100%;
     background-position: center;
     background-image: url(backround.jpg);
+    filter: contrast(100%);
     background-size: cover;
     height: 100vh;
     min-width: 800px;
@@ -73,6 +74,7 @@
     margin-left: 2rem;
     background-color: #708090;
     height: 686px;
+    filter: contrast(100%);
 }
 
 .big_text h1 {
@@ -94,7 +96,7 @@
     margin-left: 5rem;
     margin-right: 5rem;
     font-family: "Wawati TC";
-    font-size: 1rem;
+    font-size: 18px;
 }
 .pagetwo{
     width: 100%;
@@ -102,7 +104,8 @@
     background-image: url(backround.jpg);
     background-size: cover;
     height: 100%;
-    min-width: 800px;
+    min-width: 900px;
+    filter: contrast(100%);
 }
 
 .main2{
@@ -173,10 +176,12 @@
     padding-bottom: 1rem;
     text-align: left;
     margin-left: 10px;
+    filter: contrast(100%);
 }
 
-.product h3{
-    font-size: 10px;
+.min{
+    filter: contrast(100%);
+    font-size: 12px;
     font-family: "Wawati TC";
     text-align: left;
     margin-left: 3rem;
@@ -184,7 +189,8 @@
 }
 
 .product p{
-    font-size: 15px;
+    filter: contrast(90%);
+    font-size: 16px;
     font-family: "Wawati TC";
     padding-bottom: 1rem;
     padding-top: 1rem;
