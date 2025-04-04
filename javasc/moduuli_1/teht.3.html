@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+        margin-left: 4rem;
+        font-family: "Academy Engraved LET";
+        font-size: 1rem;
+        text-align: center;
+        padding-top: 4rem;
+        }
+        h1 {
+            color: #16162e;
+            font-size: 3rem;
+        }
+
+        a{
+            text-decoration: none;
+            color: #16162e;
+        }
+
+        a:hover{
+            color: #00002e;
+        }
+    </style>
+</head>
+<body>
+    <a href="mainpage.html">Takaisin</a>
+    <h1 id="filename"></h1>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+
+    <script>
+      const path = window.URL.parse(window.location.href).pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+      document.title = filename;
+      document.getElementById('filename').innerHTML = filename;
+
+      const number1STR = prompt("Anna ensimmäinen numero.")
+      const number2STR = prompt("Anna toinen numero.")
+      const number3STR = prompt("Anna kolmas numero.")
+
+      const number1 = parseInt(number1STR)
+      const number2 = parseInt(number2STR)
+      const number3 = parseInt(number3STR)
+
+      document.getElementById('output1').innerHTML = 'Summa on ' + (number1+number3+number2);
+      document.getElementById('output2').innerHTML = 'Tulo on ' + number1*number3*number2;
+      document.getElementById('output3').innerHTML = 'Keskiarvo on ' + (number1+number3+number2)/3;
+    </script>
+</body>
+
+</html>

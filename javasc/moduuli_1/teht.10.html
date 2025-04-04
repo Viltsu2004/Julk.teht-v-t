@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+        margin-left: 4rem;
+        font-family: "Academy Engraved LET";
+        font-size: 1rem;
+        text-align: center;
+        padding-top: 4rem;
+        }
+        h1 {
+            color: #16162e;
+            font-size: 3rem;
+        }
+
+        a{
+            text-decoration: none;
+            color: #16162e;
+        }
+
+        a:hover{
+            color: #00002e;
+        }
+    </style>
+</head>
+<body>
+    <a href="mainpage.html">Takaisin</a>
+    <h1 id="filename"></h1>
+    <p id="output"></p>
+    <script>
+      const path = window.URL.parse(window.location.href).pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+      document.title = filename;
+      document.getElementById('filename').innerHTML = filename;
+
+    </script>
+</body>
+</html>

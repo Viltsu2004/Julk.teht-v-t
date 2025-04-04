@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+        margin-left: 4rem;
+        font-family: "Academy Engraved LET";
+        font-size: 1rem;
+        text-align: center;
+        padding-top: 4rem;
+        }
+        h1 {
+            color: #16162e;
+            font-size: 3rem;
+        }
+
+        a{
+            text-decoration: none;
+            color: #16162e;
+        }
+
+        a:hover{
+            color: #00002e;
+        }
+    </style>
+</head>
+<body>
+   <a href="mainpage.html">Takaisin</a>
+    <h1 id="filename"></h1>
+    <p id="output"></p>
+    <script>
+      const path = window.URL.parse(window.location.href).pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+      document.title = filename;
+      document.getElementById('filename').innerHTML = filename;
+
+      const asksq = confirm('Should I calculate the square root')
+
+      if (asksq === true) {
+        const number = parseInt(prompt('Give me the number which you want to be calculated.'))
+        if (number >= 0) {
+          document.getElementById('output').innerHTML = `Your numbers (${number}) square root is ${Math.sqrt(number)}!`;
+      } else {
+          document.getElementById('output').innerHTML = 'The square root of a negative number is not defined'
+        }
+      } else {
+        document.getElementById('output').innerHTML = 'The square root is not calculated.'
+      }
+    </script>
+
+</body>
+</html>

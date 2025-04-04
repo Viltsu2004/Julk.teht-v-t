@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+        margin-left: 4rem;
+        font-family: "Academy Engraved LET";
+        font-size: 1rem;
+        text-align: center;
+        padding-top: 4rem;
+        }
+        h1 {
+            color: #16162e;
+            font-size: 3rem;
+        }
+
+        a{
+            text-decoration: none;
+            color: #16162e;
+        }
+
+        a:hover{
+            color: #00002e;
+        }
+    </style>
+</head>
+<body>
+    <a href="mainpage.html">Takaisin</a>
+    <h1 id="filename"></h1>
+    <div></div>
+        <ul>
+            <li id="output"></li>
+        </ul>
+    </script>
+    <script>
+      const path = window.URL.parse(window.location.href).pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+      document.title = filename;
+      document.getElementById('filename').innerHTML = filename;
+
+      function leapyear(year1) {
+        if (year1 % 4 === 0 || year1 % 100 === 0 && year1 % 400 === 0) {
+        return true}
+      }
+
+      let year1 = parseInt(prompt("Give start year."))
+      const year2 = parseInt(prompt("Give end year."))
+
+      for (year1 = year1; year1 <= year2; year1++) {
+        if (leapyear(year1) === true) {
+          document.getElementById('output').innerHTML = year1
+
+
+        }
+      }
+
+
+    </script>
+
+</body>
+</html>
