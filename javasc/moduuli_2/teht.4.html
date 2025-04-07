@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <style>
+        body {
+        margin-left: 1rem;
+        font-family: "Academy Engraved LET";
+        font-size: 1rem;
+        text-align: center;
+        padding-top: 4rem;
+        }
+        h1 {
+            color: #16162e;
+            font-size: 3rem;
+        }
+        ul {
+            display: inline-block;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: #16162e;
+        }
+
+        a:hover{
+            color: #00002e;
+        }
+    </style>
+</head>
+<body>
+    <a href="mainpage2.html">Takaisin</a>
+    <h1 id="filename"></h1>
+    <ul id="output"></ul>
+
+    <script>
+      const path = window.URL.parse(window.location.href).pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+      document.title = filename;
+      document.getElementById('filename').innerHTML = filename;
+
+
+      let list = []
+
+      for (let i = 0; i >= 0; i++) {
+        const numbers = parseInt(prompt(`Give me numbers, when you want to stop numbers giving give me 0`))
+        list.push(numbers)
+        if (numbers === 0) {
+          break
+        }
+
+      }
+      let order = list.sort((a, b) => b-a);
+
+        for (let l = 0; l < order.length; l++) {
+          let newli = document.createElement("li");
+          newli.textContent = order[l];
+          document.getElementById('output').appendChild(newli);
+        }
+
+
+    </script>
+</body>
+</html>
