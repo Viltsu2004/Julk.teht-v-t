@@ -37,7 +37,7 @@ def summa(luku1):
         tilakoodi = 400
         vastaus = {
         'status' : tilakoodi,
-        'kuvaus' : 'Virheellinen yhteenlaskettava'
+        'kuvaus' : 'Virheellinen luku'
         }
     json_vastaus = json.dumps(vastaus)
     return Response(response=json_vastaus, status=tilakoodi, mimetype='application/json')
