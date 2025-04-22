@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  const mainh = document.querySelector('body')
+  const text = document.createElement('h1')
+  text.textContent = "I'm printing next joke to console"
+  const button = document.createElement('button')
+  button.textContent = 'Clic me!'
+
+  button.addEventListener('click', async () => {
+    try{
+      const answer = await fetch('https://api.chucknorris.io/jokes/random')
+      const data = await answer.json()
+      console.log(data.value)
+    } catch (error){
+      console.error('Error getting joke', error)
+    }
+
+  })
+  mainh.append(text, button)
+
+
+</script>
+
+</body>
+</html>

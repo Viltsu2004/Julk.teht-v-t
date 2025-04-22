@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form id="search">
+  <input id="query" name="q" type="text">
+  <input type="submit" value="Search">
+</form>
+
+<div id="results"></div>
+
+<script>
+  const search = document.querySelector('#search')
+  const results = document.querySelector('#results')
+
+  search.addEventListener('submit', async function(event){
+    event.preventDefault()
+
+    const search = document.querySelector('input[id=query]').value
+
+    try{
+      const answer = await fetch(`https://api.chucknorris.io/jokes/search?query=${search}`)
+      const data = await answer.json()
+
+       data.result.forEach(joke => {
+        const article = document.createElement('article')
+        const pelement = document.createElement('p')
+        pelement.textContent = joke.value
+        article.appendChild(pelement)
+        results.appendChild(article)
+      })
+    } catch (error) {
+      console.error('Error getting joke:', error)
+    }})
+
+
+
+</script>
+
+</body>
+</html>
