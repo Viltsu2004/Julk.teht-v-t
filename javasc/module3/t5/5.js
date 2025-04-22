@@ -93,3 +93,29 @@ const picArray = [
 ];
 
 // add your code here
+picArray.forEach(thigs=> {
+  const article = document.createElement('article')
+  article.classList.add('card')
+
+  const inside = document.createElement('h2')
+  inside.textContent = thigs.title
+
+  const figure = document.createElement('figure')
+
+    const img = document.createElement('img')
+    img.src = thigs.image.medium
+    img.alt = thigs.title
+
+    const figcaption = document.createElement('figcaption')
+    figcaption.textContent = thigs.caption
+
+  const text = document.createElement('p')
+  inside.textContent = thigs.description
+
+  article.append(inside, figure, text)
+  figure.append(img, figcaption)
+
+
+  document.getElementById('pictures').appendChild(article)
+})
+
