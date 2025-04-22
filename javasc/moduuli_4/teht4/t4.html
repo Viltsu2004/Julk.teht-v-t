@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form id="tv">
+  <input id="query" name="q" type="text">
+  <input type="submit" value="Search">
+</form>
+
+<div id="results"></div>
+
+<script>
+  'use strict'
+    const tvsearch = document.getElementById('tv')
+    const results = document.getElementById('results')
+
+
+    tvsearch.addEventListener('submit', async function(event){
+    event.preventDefault()
+
+    const search = document.querySelector('input[id=query]').value
+      results.innerHTML = ''
+
+
+
+    try {
+    const response = await fetch(`https://api.tvmaze.com/search/shows?q=${search}`)
+    const jsondata = await response.json()
+
+    jsondata.forEach(things=> {
+
+      const results = document.createElement('div')
+      results.id = 'results'
+
+      const article = document.createElement('article')
+
+      const inside = document.createElement('h2')
+      inside.textContent = things.show.name
+
+      const aelement = document.createElement('a')
+      aelement.href = things.show.url
+      aelement.textContent = 'More info'
+      aelement.target = 'blank'
+
+      const img = document.createElement('img')
+        img.src = things.show.image ? things.show.image.medium : 'https://via.placeholder.com/210x295?text=Not%20Found'
+        img.alt = things.show.name
+
+      const summ = document.createElement('div')
+      summ.textContent = things.show.summary
+
+      results.appendChild(article)
+      article.append(inside, aelement, img, summ)
+
+      document.getElementById('results').appendChild(results)
+
+
+    })
+
+     } catch (error) {
+      console.log(error.message)
+    }
+
+
+    })
+</script>
+
+</body>
+</html>
